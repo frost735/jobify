@@ -1,8 +1,12 @@
+import express from 'express'
 import dotenv from 'dotenv'
 dotenv.config()
 
-import express from 'express'
+// db and authenticateUser
 import connectDB from './db/connect.js'
+
+// routes
+import authRouter from './routes/authRoutes.js'
 
 // middleware
 import notFoundMiddleware from './middleware/not-found.js'
@@ -11,10 +15,13 @@ import errorHandlerMiddleware from './middleware/error-handler.js'
 
 const app = express()
 
+app.use(express.json())
+
 app.get('/', (req, res) => {
-    throw new Error('error')
     res.send('Welcome!')
 })
+
+app.use('/api/v1/auth', authRouter)
 
 app.use(notFoundMiddleware)
 app.use(errorHandlerMiddleware)
