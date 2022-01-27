@@ -1,3 +1,6 @@
+import dotenv from 'dotenv'
+dotenv.config()
+
 import express from 'express'
 // middleware
 import notFoundMiddleware from './middleware/not-found.js'
