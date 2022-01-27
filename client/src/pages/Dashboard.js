@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect } from 'react'
 
 function Dashboard() {
   const fetchData = async () => {
@@ -7,14 +7,13 @@ function Dashboard() {
       const data = await response.json()
       console.log(data)
     } catch (error) {
-      
-    }
-    
+      console.log(error)
+    }  
   }
   useEffect(() => {
     fetchData()
   }, [])
-  return <h1>Dashboard</h1>;
+  return <h1>Dashboard</h1>
 }
 
-export default Dashboard;
+export default Dashboard
