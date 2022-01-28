@@ -1,6 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import 'express-async-errors'
+import morgan from 'morgan'
 dotenv.config()
 
 
@@ -18,6 +19,9 @@ import errorHandlerMiddleware from './middleware/error-handler.js'
 
 const app = express()
 
+if (process.env.NODE_ENV !== 'production') {
+    app.use(morgan('dev'))
+}
 app.use(express.json())
 
 app.get('/api/v1', (req, res) => {
