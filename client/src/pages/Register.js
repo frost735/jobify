@@ -14,7 +14,7 @@ const initialState = {
 function Register() {
     const navigate = useNavigate()
     const [values, setValues] = useState(initialState)
-    const { user, isLoading, showAlert, displayAlert, registerUser, loginUser } = useAppContex()
+    const { user, isLoading, showAlert, displayAlert, registerUser, loginUser, setupUser } = useAppContex()
 
     const toggleMember = () => {
         setValues({ ...values, isMember: !values.isMember })
@@ -33,9 +33,17 @@ function Register() {
         }
         const currentUser = { name, email, password }
         if (isMember) {
-            loginUser(currentUser)
+            setupUser({ 
+                currentUser, 
+                endPoint: 'login', 
+                alertText: 'Login Successful! Redirecting...', 
+            })
         } else {
-            registerUser(currentUser)
+            setupUser({ 
+                currentUser, 
+                endPoint: 'register', 
+                alertText: 'User Created! Redirecting...', 
+            })
         }
         console.log(values)
     }
