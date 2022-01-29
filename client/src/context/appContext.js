@@ -130,8 +130,8 @@ const AppProvider = ({ children }) => {
     )
 }
 
-const useAppContex = () => {
+const useAppContext = () => {
     return useContext(AppContext)
 }
 
-export { AppProvider, initialState, useAppContex }
+export { AppProvider, initialState, useAppContext }
