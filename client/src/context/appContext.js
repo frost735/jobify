@@ -73,10 +73,16 @@ const AppProvider = ({ children }) => {
         clearAlert()
     }
     
-    
-    return <AppContext.Provider value={{ ...state, displayAlert, registerUser }}>
-        {children}
-    </AppContext.Provider>
+    const loginUser = async (currentUser) => {
+        console.log(currentUser)
+    }
+    return (
+        <AppContext.Provider 
+            value={{ ...state, displayAlert, registerUser, loginUser }}
+        >
+            {children}
+        </AppContext.Provider>
+    )
 }
 
 const useAppContex = () => {
