@@ -8,7 +8,11 @@ function SmallSidebar() {
     const { showSidebar, toggleSidebar } = useAppContext()
     return (
         <Wrapper>
-            <div className={showSidebar ? 'sidebar-container show-sidebar' : 'sidebar-container'}>
+            <div 
+                className={
+                    showSidebar ? 'sidebar-container show-sidebar' : 'sidebar-container'
+                }
+            >
                 <div className='content'>
                     <button type='button' className='close-btn' onClick={toggleSidebar}>
                         <FaTimes/>
