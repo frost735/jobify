@@ -1,11 +1,11 @@
 import Wrapper from '../assets/wrappers/BigSidebar'
 
-function BigSitebar() {
+function BigSidebar() {
     return (
         <Wrapper>
-            <h4>big sitebar</h4>
+            <h4>big sidebar</h4>
         </Wrapper>
     )
 }
 
-export default BigSitebar;
+export default BigSidebar;

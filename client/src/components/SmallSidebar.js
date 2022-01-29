@@ -1,12 +1,12 @@
 import Wrapper from '../assets/wrappers/SmallSidebar'
 
-function SmallSitebar() {
+function SmallSidebar() {
     return (
         <Wrapper>
-            <h4>small sitebar</h4>
+            <h4>small sidebar</h4>
         </Wrapper>
     )
 }
 
-export default SmallSitebar;
+export default SmallSidebar;
  
